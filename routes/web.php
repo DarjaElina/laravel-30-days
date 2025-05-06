@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Models\Job;
+use \App\Models\Dog;
 
 Route::get('/', function () {
     return view('home');
@@ -23,4 +24,10 @@ Route::get('/jobs/{id}', function ($id) {
     $job = Job::find($id);
 
     return view('job', ['job' => $job]);
+});
+
+Route::get('/dogs', function () {
+    return view('dogs', [
+        'dogs' => Dog::All()
+    ]);
 });
