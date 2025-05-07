@@ -25,9 +25,3 @@ Route::get('/jobs/{id}', function ($id) {
 
     return view('job', ['job' => $job]);
 });
-
-Route::get('/dogs', function () {
-    return view('dogs', [
-        'dogs' => Dog::All()
-    ]);
-});
