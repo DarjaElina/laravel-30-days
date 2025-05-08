@@ -12,4 +12,11 @@ class Job extends Model {
   protected $table = 'job_listings';
 
   protected $fillable = ['title', 'salary'];
+
+  public function employer() {
+    return $this->belongsTo(Employer::class);
+  }
 }
+
+// Lazy Loading
+// Lazy loading refers to the delay of a SQL query until the last possible moment
